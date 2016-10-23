@@ -1,0 +1,44 @@
+<% post = page %>
+<div class="post-page">
+  <div class="post-page__feature-image" style="background-image:url('<%= post.image %>');">
+    <div class="post-page__back">
+      <a href="<%- url_for() %>">« <%= theme.title %></a>
+    </div>
+  </div>
+  <div class="post-page__content">
+    <div class="post-content">
+      <div class="post-heading">
+        <div>
+          <h1 class="post-heading__title">
+            <%= post.title %>
+          </h1>
+        </div>
+        <div>
+          <span class="post-heading__date">
+            <%= date(post.date, 'MMMM do, YYYY') %>
+          </span>
+        </div>
+      </div>
+      <div class="post-body">
+        <%- post.content %>
+      </div>
+      <div class="post-footer">
+        <hr class="post-footer__bar" />
+        <div class="post-footer__content">
+          <div><%= config.author %></div>
+          <div>
+            <ul class="post-network-links-list">
+              <% theme.network.forEach(function(networkItem) { %>
+                <li class="post-network-links-list__item">
+                  <a href="<%= networkItem.url %>">
+                    <i class="fa fa-1x <%= networkItem.icon %>"></i>
+                  </a>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

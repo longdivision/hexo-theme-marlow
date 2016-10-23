@@ -1,0 +1,82 @@
+<div class="landing-page">
+  <div class="langing-page__inner">
+    <div class="heading">
+      <h1 class="heading__title">
+        <%= theme.title %>
+      </h1>
+      <h3 class="heading__subtitle">
+        <%= theme.role %>
+      </h3>
+      <h3 class="heading__location">
+        <i class="fa fa-map-marker"></i>
+        <%= theme.location %>
+      </h3>
+    </div>
+    <div class="content-columns">
+      <div class="content-columns__column">
+        <div class="content-section">
+          <h4 class="content-section__title"><%= __('index.about') %></h4>
+          <div class="content-section__content">
+            <p><%= theme.about.overview %></p>
+            <p>
+              <i class="fa fa-heart"></i>
+              <%= theme.about.likes %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="content-columns__column">
+        <div class="content-section">
+          <h4 class="content-section__title"><%= __('index.posts') %></h4>
+          <div class="content-section__content">
+            <table class="posts-table">
+              <% page.posts.each(function(post){ %>
+                <% var year = post.date.year(); %>
+                <tr>
+                  <td class="posts-table__cell posts-table__cell--year">
+                    <%= year %>
+                  </td>
+                  <td class="posts-table__cell">
+                    <a href="<%- url_for(post.path) %>">
+                      <%= post.title %>
+                    </a>
+                  </td>
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="content-columns__column">
+        <div class="content-section">
+          <h4 class="content-section__title"><%= __('index.projects') %></h4>
+          <div class="content-section__content">
+            <dl class="projects-list">
+              <% theme.projects.forEach(function(project) { %>
+                <dt class="projects-list__project-name">
+                  <% if (project.url) { %>
+                    <a href="<%= project.url %>"><%= project.title %></a>
+                  <% } else { %>
+                    <%= project.title %>
+                  <% } %>
+                </dt>
+                <dd class="projects-list__project-description"><%= project.description %></dd>
+              <% }) %>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="network-links">
+      <ul class="network-links-list">
+        <% theme.network.forEach(function(networkItem) { %>
+          <li class="network-links-list__item">
+            <a href="<%= networkItem.url %>">
+              <i class="fa fa-2x <%= networkItem.icon %>"></i>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+</div>
