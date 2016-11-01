@@ -1,27 +1,29 @@
 # Info about you; used to generate the landing page
-role: Role
-location: Location
+role: Software Developer
+location: London
 about:
-  overview: Overview of you
-  likes: Thinks you like
+  overview: I am a software developer and technology enthusiast based in London.
+  likes: Coding, history, food & music.
 
 # Projects you would like to show in the project column of the landing page
 # Each project should have a title and a description. A url for the project can optionally be provided
 projects:
-  - title: Project name
-    description: Project description
-    url: http://example.com/
-  - title: Other project
-    description: Project description
+  - title: Hex
+    description: A snappy and fun Hacker News app for Android
+    url: https://github.com/longdivision/hex
 
 # Network sites you would like to link to, e.g. GitHub, Twitter.
 # Each site should have a url and a Font Awesome icon, e.g. fa-github for the GitHub icon.
 # See http://fontawesome.io/icons/ for a complete list of Icons
 network:
-  - url: https://github.com/github
+  - url: https://github.com/longdivision
     icon: fa-github
-  - url: https://twitter.com/twitter
+  - url: https://twitter.com/seanpwl
     icon: fa-twitter
+  - url: http://stackoverflow.com/users/642196/sean-powell
+    icon: fa-stack-overflow
+  - url: https://uk.linkedin.com/in/seanpowe
+    icon: fa-linkedin
 
 # A Google Analytics ID can optionally be provided for tracking
-google_analytics:
+google_analytics: UA-33876515-1
